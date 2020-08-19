@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    &__button {
+        background: none;
+        border: none;
+    }
+    &__statistics {
+    }
+    &__info {
+    }
+    &__settings {
+    }
+}

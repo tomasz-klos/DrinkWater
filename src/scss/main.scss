@@ -1,13 +1,21 @@
 @import "~normalize.css";
+@import "modules/app.scss";
+@import "modules/button.scss";
+@import "modules/glass.scss";
+@import "modules/header.scss";
+@import "modules/footer.scss";
+@import "modules/info.scss";
 
-@import "_variables";
-@import "modules/hello.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 
 body {
-  background: $wtf;
+  background: #3767AD;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  font-family: Roboto;
+  padding: 0 16px;
 }

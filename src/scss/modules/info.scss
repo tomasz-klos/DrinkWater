@@ -1,0 +1,18 @@
+.info {
+    display: none;
+    &.show {
+    display: block;
+    position: absolute;
+    left: 39px;
+    top: 150px;
+    width: 298px;
+    height: 510px;
+    background: #ffffff;
+    border-radius: 5px;
+    }
+    &__description {
+        color: black;
+
+    
+    }
+}

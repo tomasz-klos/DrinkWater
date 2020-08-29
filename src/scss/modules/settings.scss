@@ -1,0 +1,17 @@
+.settings {
+    display: none;
+    &--show {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #aad2ba;
+    }
+    &__x {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }

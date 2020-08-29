@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DrinkWater</title>
-    <meta name="description" content="Aplikacja, która liczy ilość wypitej wody" />
+    <meta
+      name="description"
+      content="Aplikacja, która liczy ilość wypitej wody"
+    />
     <!-- Title -->
     <meta property="og:title" content="DrinkWater" />
     <!-- OPTIONAL description. 2-4 sentences. -->
-    <meta property="og:description" content="Aplikacja, która liczy ilość wypitej wody" />
+    <meta
+      property="og:description"
+      content="Aplikacja, która liczy ilość wypitej wody"
+    />
     <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
-    <meta property="og:url" content="https://tomasz-klos.github.io/DrinkWater/" />
+    <meta
+      property="og:url"
+      content="https://tomasz-klos.github.io/DrinkWater/"
+    />
     <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
     <meta
       property="og:image"
@@ -147,27 +156,62 @@
   <body>
     <main class="app">
       <header class="header">
-      <img class="header__chevrons" src="../assets/img/chevrons-left.png">
-      <h1 class="header__title">DrinkWater</h1>
-      <img class="header__chevrons" src="../assets/img/chevrons-right.png">
+        <h1 class="header__title">DrinkWater</h1>
       </header>
       <div id="content" class="info">
-        <p class="info__despription">Informacje o aplikacji DrinkWater</p>
+        <img class="info__x x--js" src="/src/assets/img/x.svg" />
+        <section class="infoSection">
+          <img class="infoSection__icon" src="/src/assets/img/iconinfo1.png" />
+          <p class="infoSection__description">
+            Pij minimum 2-2,5 l wody dziennie! Średnie zapotrzebowanie dobowe na
+            wodę u dorosłego zdrowego człowieka wynosi około 0,04 kg/kg masy
+            ciała, co stanowi blisko 4% naszej wagi.
+          </p>
+        </section>
+        <section class="infoSection">
+          <img class="infoSection__icon" src="/src/assets/img/iconinfo2.png" />
+          <p class="infoSection__description">
+            Nasz organizm potrzebuje wody, aby prawidłowo funkcjonować. Jest to
+            podstawowy składnik naszej diety, o którym często zapominamy.
+            Dlatego warto podkreślić fakt , że bez jedzenia jesteśmy w stanie
+            przeżyć kilka tygodni, natomiast bez wody tylko kilka dni.
+          </p>
+        </section>
       </div>
-      <p class="app__alert">Czas się napić !</p>
+      <div class="statistics">
+        <img class="statistics__x x--statistics" src="/src/assets/img/x.svg" />
+        <section class="statistics__content"></section>
+      </div>
+      <div class="settings">
+        <img class="settings__x x--settings" src="/src/assets/img/x.svg" />
+      </div>
+      <p class="app__alert alert--js">Czas się napić !</p>
       <div class="glass">
-      <span class="glass__counter glass__counter--js">0</span>
+        <span class="glass__counter glass__counter--js">0</span>
       </div>
       <button class="button button--js">dodaj szklankę</button>
       <button class="button-remove button-remove--js">usuń szklankę</button>
       <footer class="footer">
         <button class="footer__button">
-         <img class="footer__statistics statistics--js" src="../assets/img/presentation.png"></button>
-         <button class="footer__button">
-         <img id="toggle" class="footer__info info--js" src="../assets/img/info.png"></button>
-         <button class="footer__button">
-      <img class="footer__settings settings--js" src="../assets/img/settings.png"></button>
-    </footer>
+          <img
+            class="footer__statistics statistics--js"
+            src="../assets/img/presentation.png"
+          />
+        </button>
+        <button class="footer__button">
+          <img
+            id="toggle"
+            class="footer__info info--js"
+            src="../assets/img/info.png"
+          />
+        </button>
+        <button class="footer__button">
+          <img
+            class="footer__settings settings--js"
+            src="../assets/img/settings.png"
+          />
+        </button>
+      </footer>
     </main>
   </body>
 </html>

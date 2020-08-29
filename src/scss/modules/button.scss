@@ -1,5 +1,4 @@
 .button {
-  background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   width: 216px;
@@ -14,10 +13,19 @@
   border: none;
 }
 
+.button:hover {
+  background: #51fd02;
+
+}
+
 .button-remove {
   margin: auto;
-  margin-bottom: 81px;
+  margin-bottom: 50px;
   display: block;
   background: none;
   border: none;
+}
+
+.button-remove:hover {
+  background: #fd0202;
 }

@@ -1,18 +1,32 @@
 .info {
     display: none;
-    &.show {
+    &--show {
     display: block;
     position: absolute;
-    left: 39px;
-    top: 150px;
-    width: 298px;
-    height: 510px;
-    background: #ffffff;
-    border-radius: 5px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #AAD2BA;
     }
-    &__description {
-        color: black;
+    &__x {
+        position: absolute;
+        top: 16px;
+        right: 16px;
 
-    
     }
+}
+
+.infoSection {
+    margin: 60px 16px;
+    &__description {
+        color: white;
+        font-size: 22px;
+        line-height: 30px;
+    }
+    &__icon {
+    display: block;
+    margin: auto;
+    }
+
 }

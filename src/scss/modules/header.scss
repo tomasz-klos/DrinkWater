@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #764248;
     &__title {
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 55px;
         line-height: 64px;
         margin-bottom: 31px;

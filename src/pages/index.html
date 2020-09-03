@@ -159,7 +159,11 @@
         <h1 class="header__title">DrinkWater</h1>
       </header>
       <div id="content" class="info">
+        <h2 class="statistics__title2">Informacje</h2>
         <img class="info__x x--js" src="/src/assets/img/x.svg" />
+          <p class="info__text">
+           Aktualny stan dziennego celu: <span class="percent-counter--js"></span>
+          </p>
         <section class="infoSection">
           <img class="infoSection__icon" src="/src/assets/img/iconinfo1.png" />
           <p class="infoSection__description">
@@ -179,13 +183,42 @@
         </section>
       </div>
       <div class="statistics">
+        <h2 class="statistics__title2">Historia</h2>
         <img class="statistics__x x--statistics" src="/src/assets/img/x.svg" />
-        <section class="statistics__content"></section>
+        <section class="statistics__content content--js">
+        </section>
       </div>
       <div class="settings">
+        <h2 class="statistics__title2">Ustawienia</h2>
         <img class="settings__x x--settings" src="/src/assets/img/x.svg" />
+        <form>
+          <p>
+            <label for="goal">Wybierz swój dzienny cel:</label>
+            <select class="dailygoal--js">
+              <option value="2">2l</option>
+              <option value="2.25">2.25l</option>
+              <option value="2.5">2.5l</option>
+              <option value="2.75">2.75l</option>
+              <option value="3">3l</option>
+              <option value="3.25">3.25l</option>
+              <option value="3.5">3.5l</option>
+              <option value="3.75">3.75l</option>
+              <option value="4">4l</option>
+              <option value="4.25">4.25l</option>
+              <option value="4.5">4.5l</option>
+              <option value="4.75">4.75l</option>
+              <option value="5">5l</option>
+            </select>
+            <button class="goal__button goal__button--js">Zapisz</button>
+          </p>
+        </form>
       </div>
-      <p class="app__alert alert--js">Czas się napić !</p>
+      <div class="appalert alert--js">
+      <p class="appalert__alert">
+        Gratulacje, twój cel<br>
+        został zrealizowany!
+      </p>
+      </div>
       <div class="glass">
         <span class="glass__counter glass__counter--js">0</span>
       </div>

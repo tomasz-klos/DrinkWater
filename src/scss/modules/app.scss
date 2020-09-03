@@ -7,23 +7,27 @@
     text-align: center;
     margin: 0 0 31px;
   }
+}
+
+.appalert {
+  background: url(/src/assets/img/backalert.png);
+  display: flex;
+  justify-content: flex-end;
+  width: 375px;
+  height: 76px;
+  opacity: 0;
+  margin: 30px 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   &__alert {
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 47px;
-    background: #ffffff;
-    color: #ff0020;
-    text-align: center;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 43px 0;
-    border-radius: 5px; 
+    text-align: end;
+    font-weight: 200;
+    font-size: 27px;
+    padding: 6px 20px 6px 30px;
+    font-variant: small-caps;
+    margin: 0;
   }
   &__alert--show {
     opacity: 1;
   }
+
 }

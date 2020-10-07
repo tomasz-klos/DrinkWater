@@ -1,0 +1,26 @@
+.statusPanel {
+  display: flex;
+  justify-self: start;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-bottom: 40px;
+  &__state {
+    text-align: center;
+  }
+  &__dailygoal {
+    text-align: center;
+    border-left: 1px solid #cdc9c9;
+    border-right: 1px solid #cdc9c9;
+    padding: 0 30px;
+  }
+  &__status {
+    text-align: center;
+  }
+  &__title {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &__bold {
+    font-weight: bold;
+  }
+}

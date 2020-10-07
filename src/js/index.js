@@ -24,17 +24,50 @@ const done = document.querySelector(".alert--js");
 const alert = document.querySelector(".appalert");
 const sectionStatistics = document.querySelector(".content--js");
 const goalButton = document.querySelector(".goal__button--js");
-const entry = localStorage.getItem(key);
-
+const selectGoal = document.querySelector(".dailygoal--js");
 
 const key = new Date().toLocaleString().slice(0, 10);
 const keyDay = key.slice(0, 2);
 const keyMonth = key.slice(3, 5);
 
-let currentGlassCounter = 0;
+
 let historyArticles;
 let percentCounter = document.querySelectorAll(".percent-counter--js");
 let percentage;
+
+let currentGlassCounter = 0;
+
+const idGoal = document.getElementById("dailygoal");
+const resultgoal = idGoal.options[idGoal.selectedIndex].value;
+
+const keyselect = localStorage.getItem("select", dailygoal)
+const idSelected = idGoal.selectedIndex;
+
+
+
+///////////////////////////////////////////
+// Goal settings
+
+let myGoal = localStorage.getItem("select");
+
+function addValue() {
+  localStorage.setItem("select", myGoal);
+}
+
+function save() {
+  localStorage.getItem("select", myGoal);
+}
+
+goalButton.addEventListener("click", () => {
+  let dailygoal = selectGoal.value;
+  console.log(dailygoal);
+  localStorage.setItem("select", dailygoal);
+
+  save();
+  console.log(myGoal);
+});
+
+
 
 
 // Menu button
@@ -69,15 +102,24 @@ hideSettings.addEventListener("click", () => {
 // calculate percentage based on counter value
 
 const percentageCalc = () => {
-  percentage = (currentGlassCounter / 10) * 100;
+  percentage = (currentGlassCounter / myGoal) * 100;
   for (let i = 0; i < percentCounter.length; i++) {
     percentCounter[i].innerHTML = `${Math.round(percentage)}%`;
   }
+  if (percentage >= 100) {
+    done.classList.add("appalert__alert--show");
+  } else if(percentage < 100) {
+    done.classList.remove("appalert__alert--show");
+}
 };
+
+
+
+
 const updateUI = () => {
   if (currentGlassCounter >= 0) {
     for (let i = 0; i < glassCounter.length; i++) {
-      glassCounter.innerHTML = currentGlassCounter;
+      glassCounter[i].innerHTML = currentGlassCounter;
     }
     localStorage.setItem(
       key,
@@ -103,9 +145,12 @@ const decrement = () => {
 
 
 // store value in localstorage with todays key
+
+const entry = localStorage.getItem(key);
+
 let result;
 if (entry) {
-  currentGlassCounter = JSON.parse(entry);
+  result = JSON.parse(entry);
   if (result.day === keyDay) {
     for (let i = 0; i < glassCounter.length; i++) {
       glassCounter[i].innerHTML = result.value;
@@ -124,7 +169,7 @@ if (entry) {
   }
 } else {
   for (let i = 0; i < glassCounter.length; i++) {
-    glassCounter.innerHTML = currentGlassCounter;
+    glassCounter[i].innerHTML = currentGlassCounter;
     localStorage.setItem(
       key,
       JSON.stringify({
@@ -133,33 +178,68 @@ if (entry) {
         value: currentGlassCounter,
       })
     );
+    glassCounter[i].innerHTML = currentGlassCounter;
   }
 };
 
 // Button add and remove
 
 buttonAdd.addEventListener('click', () => {
+  save();
   increment();
   glassCounter.innerHTML = currentGlassCounter;
+  console.log("select");
+  console.log(myGoal);
+  console.log(percentage)
 });
 
 
 buttonRemove.addEventListener('click', () => {
+  save();
   decrement();
   glassCounter.innerHTML = currentGlassCounter;
+  console.log("select");
+  console.log(myGoal);
+  console.log(percentage)
 });
 
 
 // use history saved in localstorage and implement it into the history layout
+
+
 const storageArrayEntries = Object.entries(localStorage);
 for (let [key, value] of storageArrayEntries) {
   if (value !== 'INFO') {
+    if (key !== 'select') {
     let cupsAmount = JSON.parse(value).value;
     const calc = () => {
-      percentage = (cupsAmount / 10) * 100;
+      percentage = (cupsAmount / myGoal) * 100;
       return Math.round(percentage);
     };
-    historyArticles = `<div class="statistics__element"><h2 class="statistics__title">${key.slice(0, 4)}</h2><p class="statistics__text"> Cups drunk: <span class="cups-count--js">${cupsAmount}</span></p><p class="statistics__text">Daily water intake: <span class="percentage--js">${calc()}%</span></p></div>`;
+    historyArticles = `<div class="statistics__element"><h2 class="statistics__title">${key.slice(0, 4)}</h2><p class="statistics__text"> Wypite szklanki: <span class="cups-count--js">${cupsAmount}</span></p><p class="statistics__text">Dzienny cel: <span class="percentage--js">${calc()}%</span></p></div>`;
     sectionStatistics.insertAdjacentHTML('beforeend', historyArticles);
   }
+}
 };
+
+let effect;
+if (entry) {
+  effect = JSON.parse(entry);
+  currentGlassCounter = result.value;
+  percentageCalc();
+} else {
+  // if there is nothing in key, value = '0' (new day)
+  localStorage.setItem(
+    key,
+    JSON.stringify({
+      day: keyDay,
+      month: keyMonth,
+      value: 0,
+    })
+  );
+};
+
+glassCounter.innerHTML = currentGlassCounter;
+
+
+/////// SETTINGS ////

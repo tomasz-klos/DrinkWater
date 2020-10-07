@@ -155,11 +155,8 @@
   </head>
   <body>
     <main class="app">
-      <header class="header">
-        <h1 class="header__title">DrinkWater</h1>
-      </header>
       <div id="content" class="info">
-        <h2 class="statistics__title2">Informacje</h2>
+        <h2 class="section__title">Informacje</h2>
         <img class="info__x x--js" src="/src/assets/img/x.svg" />
           <p class="info__text">
            Aktualny stan dziennego celu: <span class="percent-counter--js"></span>
@@ -183,33 +180,33 @@
         </section>
       </div>
       <div class="statistics">
-        <h2 class="statistics__title2">Historia</h2>
+        <h2 class="section__title">Historia</h2>
         <img class="statistics__x x--statistics" src="/src/assets/img/x.svg" />
         <section class="statistics__content content--js">
         </section>
       </div>
       <div class="settings">
-        <h2 class="statistics__title2">Ustawienia</h2>
+        <h2 class="section__title">Ustawienia</h2>
         <img class="settings__x x--settings" src="/src/assets/img/x.svg" />
-        <form>
-          <p>
-            <label for="goal">Wybierz swój dzienny cel:</label>
-            <select class="dailygoal--js">
-              <option value="2">2l</option>
-              <option value="2.25">2.25l</option>
-              <option value="2.5">2.5l</option>
-              <option value="2.75">2.75l</option>
-              <option value="3">3l</option>
-              <option value="3.25">3.25l</option>
-              <option value="3.5">3.5l</option>
-              <option value="3.75">3.75l</option>
-              <option value="4">4l</option>
-              <option value="4.25">4.25l</option>
-              <option value="4.5">4.5l</option>
-              <option value="4.75">4.75l</option>
-              <option value="5">5l</option>
+        <form class="settingsform">
+          <p class ="settingsform__text">
+            <label class="settingsform__goal" for="goal">Wybierz swój dzienny cel:</label>
+            <select id="dailygoal" class="dailygoal--js">
+              <option value="8">2l</option>
+              <option value="9">2.25l</option>
+              <option value="10">2.5l</option>
+              <option value="11">2.75l</option>
+              <option value="12">3l</option>
+              <option value="13">3.25l</option>
+              <option value="14">3.5l</option>
+              <option value="15">3.75l</option>
+              <option value="16">4l</option>
+              <option value="17">4.25l</option>
+              <option value="18">4.5l</option>
+              <option value="19">4.75l</option>
+              <option value="20">5l</option>
             </select>
-            <button class="goal__button goal__button--js">Zapisz</button>
+            <button class="settingsform__button goal__button--js">Zapisz</button>
           </p>
         </form>
       </div>
@@ -220,10 +217,25 @@
       </p>
       </div>
       <div class="glass">
+        <img src="../assets/img/counter.svg">
         <span class="glass__counter glass__counter--js">0</span>
       </div>
       <button class="button button--js">dodaj szklankę</button>
       <button class="button-remove button-remove--js">usuń szklankę</button>
+      <section class="statusPanel">
+        <article class="statusPanel__state">
+          <p class="statusPanel__title">Stan</p>
+          <p class="statusPanel__bold">2.5L</p>
+        </article>
+        <article class="statusPanel__dailygoal">
+          <p class="statusPanel__title">Dzienny cel</p>
+          <p class="statusPanel__bold">4L</p>
+        </article>
+        <article class="statusPanel__status">
+          <p class="statusPanel__title">Status</p>
+          <span class="statusPanel__bold percent-counter--js"></span>
+        </article>
+      </section>
       <footer class="footer">
         <button class="footer__button">
           <img

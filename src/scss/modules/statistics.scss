@@ -15,7 +15,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    background: #aad2ba;
+    background: #E6EFF2;
   }
   &__x {
     position: absolute;
@@ -33,10 +33,19 @@
     
   }
   &__element {
-    background-color: #7AA8CC;
-    border-radius: 10px;
+    background-color: #113A5A;
+    border-radius: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 7%;
+  }
+  &__div {
+    background: #113A5A;
+  }
+  &__title {
+    color: #E6EFF2;
+  }
+  &__text {
+    color: #E6EFF2;
   }
 }

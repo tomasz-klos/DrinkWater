@@ -8,6 +8,7 @@
 @import "modules/statistics.scss";
 @import "modules/settings.scss";
 @import "modules/statusPanel.scss";
+@import "modules/buttons.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
@@ -25,12 +26,12 @@ body {
 
 .section {
   &__title {
-    margin: 23px 20px 0 20px;
+    margin: 0;
     font-size: 30px;
     text-align: center;
-    border-bottom: 1px solid #764248;
     font-style: normal;
     font-weight: 500;
-    padding-bottom: 15px;
+    padding: 18px;
+    color: #E6EFF2;
   }
 }

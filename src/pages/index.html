@@ -156,20 +156,20 @@
   <body>
     <main class="app">
       <div id="content" class="info">
+        <div class="info__div">
         <h2 class="section__title">Informacje</h2>
         <img class="info__x x--js" src="/src/assets/img/x.svg" />
-          <p class="info__text">
-           Aktualny stan dziennego celu: <span class="percent-counter--js"></span>
-          </p>
+        </div>
         <section class="infoSection">
+          <article>
           <img class="infoSection__icon" src="/src/assets/img/iconinfo1.png" />
           <p class="infoSection__description">
             Pij minimum 2-2,5 l wody dziennie! Średnie zapotrzebowanie dobowe na
             wodę u dorosłego zdrowego człowieka wynosi około 0,04 kg/kg masy
             ciała, co stanowi blisko 4% naszej wagi.
           </p>
-        </section>
-        <section class="infoSection">
+        </article>
+        <article>
           <img class="infoSection__icon" src="/src/assets/img/iconinfo2.png" />
           <p class="infoSection__description">
             Nasz organizm potrzebuje wody, aby prawidłowo funkcjonować. Jest to
@@ -177,11 +177,14 @@
             Dlatego warto podkreślić fakt , że bez jedzenia jesteśmy w stanie
             przeżyć kilka tygodni, natomiast bez wody tylko kilka dni.
           </p>
+        </article>
         </section>
       </div>
       <div class="statistics">
+        <div class="statistics__div">
         <h2 class="section__title">Historia</h2>
         <img class="statistics__x x--statistics" src="/src/assets/img/x.svg" />
+      </div>
         <section class="statistics__content content--js">
         </section>
       </div>
@@ -220,16 +223,18 @@
         <img src="../assets/img/counter.svg">
         <span class="glass__counter glass__counter--js">0</span>
       </div>
+      <div class="buttons">
       <button class="button button--js">dodaj szklankę</button>
       <button class="button-remove button-remove--js">usuń szklankę</button>
+    </div>
       <section class="statusPanel">
         <article class="statusPanel__state">
           <p class="statusPanel__title">Stan</p>
-          <p class="statusPanel__bold">2.5L</p>
+          <p class="statusPanel__bold"><span class="stan--js"></span>L</p>
         </article>
         <article class="statusPanel__dailygoal">
           <p class="statusPanel__title">Dzienny cel</p>
-          <p class="statusPanel__bold">4L</p>
+          <p class="statusPanel__bold"><span class="statusPanel--stan"></span>L</p>
         </article>
         <article class="statusPanel__status">
           <p class="statusPanel__title">Status</p>

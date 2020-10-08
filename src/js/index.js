@@ -25,6 +25,10 @@ const alert = document.querySelector(".appalert");
 const sectionStatistics = document.querySelector(".content--js");
 const goalButton = document.querySelector(".goal__button--js");
 const selectGoal = document.querySelector(".dailygoal--js");
+const dailygoalasd = document.querySelector(".statusPanel--stan");
+
+const stan = document.querySelector(".stan--js");
+
 
 const key = new Date().toLocaleString().slice(0, 10);
 const keyDay = key.slice(0, 2);
@@ -34,6 +38,7 @@ const keyMonth = key.slice(3, 5);
 let historyArticles;
 let percentCounter = document.querySelectorAll(".percent-counter--js");
 let percentage;
+let currentstatus;
 
 let currentGlassCounter = 0;
 
@@ -66,6 +71,14 @@ goalButton.addEventListener("click", () => {
   save();
   console.log(myGoal);
 });
+
+/////// Aktualny dzienny cel /
+
+
+let stanL = myGoal * 0.25;
+console.log(stanL);
+
+dailygoalasd.innerHTML = stanL;
 
 
 
@@ -130,6 +143,7 @@ const updateUI = () => {
       })
     );
     percentageCalc();
+    CurrentCalc();
   } else {
     currentGlassCounter = 0;
   }
@@ -216,7 +230,7 @@ for (let [key, value] of storageArrayEntries) {
       percentage = (cupsAmount / myGoal) * 100;
       return Math.round(percentage);
     };
-    historyArticles = `<div class="statistics__element"><h2 class="statistics__title">${key.slice(0, 4)}</h2><p class="statistics__text"> Wypite szklanki: <span class="cups-count--js">${cupsAmount}</span></p><p class="statistics__text">Dzienny cel: <span class="percentage--js">${calc()}%</span></p></div>`;
+    historyArticles = `<div class="statistics__element"><h2 class="statistics__title">${key.slice(0, 4)}</h2><p class="statistics__text"> Szklanki: <span class="cups-count--js">${cupsAmount}</span></p><p class="statistics__text">Dzienny cel: <span class="percentage--js">${calc()}%</span></p></div>`;
     sectionStatistics.insertAdjacentHTML('beforeend', historyArticles);
   }
 }
@@ -241,5 +255,13 @@ if (entry) {
 
 glassCounter.innerHTML = currentGlassCounter;
 
+
+const CurrentCalc = () => {
+  currentstatus = currentGlassCounter * 0.25;
+    stan.innerHTML = currentstatus;
+};
+
+currentstatus = currentGlassCounter * 0.25;
+stan.innerHTML = currentstatus;
 
 /////// SETTINGS ////

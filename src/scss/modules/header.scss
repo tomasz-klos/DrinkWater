@@ -1,13 +1,14 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #764248;
-    &__title {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 55px;
-        line-height: 64px;
-        margin-bottom: 31px;
-    }
+  background: #113a5a;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    color: #e6eff2;
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
 }

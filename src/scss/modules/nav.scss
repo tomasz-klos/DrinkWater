@@ -1,0 +1,25 @@
+.nav {
+  background: #E6EFF2;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid #113a5a;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  &__button {
+    background: none;
+    border: none;
+    height: 80px;
+    width: 100%;
+  }
+  &__div {
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__homeDiv {
+    background: #113a5a;
+  }
+}

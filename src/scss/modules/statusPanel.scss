@@ -1,20 +1,21 @@
 .statusPanel {
   display: flex;
-  justify-self: start;
-  justify-content: space-between;
-  padding: 0 40px;
-  margin-bottom: 40px;
+  padding: 0 10px;
+  margin-bottom: 50px;
   &__state {
     text-align: center;
+    width: 100%;
   }
   &__dailygoal {
     text-align: center;
     border-left: 1px solid #cdc9c9;
     border-right: 1px solid #cdc9c9;
     padding: 0 30px;
+    width:100%;
   }
   &__status {
     text-align: center;
+    width: 100%;
   }
   &__title {
     font-size: 15px;

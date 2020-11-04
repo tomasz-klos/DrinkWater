@@ -6,12 +6,9 @@
     left: 0;
     top: 0;
     width: 100%;
+    min-height: 100vh;
     background: #e6eff2;
-  }
-  &__x {
-    position: absolute;
-    top: 16px;
-    right: 20px;
+    z-index: 998;
   }
   &__text {
     margin: 25px 0;
@@ -23,17 +20,43 @@
   &__div {
     background: #113a5a;
   }
+  &__a {
+    display: flex;
+    justify-content: center;
+  }
 }
+  
 
 .infoSection {
-  margin: 60px 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  -webkit-scrollbar: none;
+  margin: 40px 0;
   &__description {
     font-size: 25px;
     line-height: 30px;
     font-weight: 300;
+    text-align: justify;
   }
   &__icon {
     display: block;
     margin: auto;
   }
+  &__button {
+    margin: 0 20px;
+  }
+}
+
+.infoSection > article {
+  flex-shrink: 0;
+  width: 80vw;
+  height: 450px;
+  background: #E6EFF2;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  padding: 0 10vw;
 }

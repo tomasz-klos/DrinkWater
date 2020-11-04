@@ -3,12 +3,12 @@
 @import "modules/button.scss";
 @import "modules/glass.scss";
 @import "modules/header.scss";
-@import "modules/footer.scss";
+@import "modules/nav.scss";
 @import "modules/info.scss";
 @import "modules/statistics.scss";
 @import "modules/settings.scss";
 @import "modules/statusPanel.scss";
-@import "modules/buttons.scss";
+@import "modules/switch.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
@@ -16,13 +16,14 @@
 body {
   background: #E6EFF2;
   color: #113A5A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+main {
+  height: 80vh;
+}
+
 
 .section {
   &__title {

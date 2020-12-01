@@ -11,6 +11,7 @@
     border: none;
     height: 80px;
     width: 100%;
+    outline: none;
   }
   &__div {
     height: 80px;
@@ -21,5 +22,13 @@
   }
   &__homeDiv {
     background: #113a5a;
+  }
+  &__text {
+    margin: 0;
+    color: #113a5a;
+  }
+  &__homeText {
+    margin: 0;
+    color: #E6EFF2;
   }
 }

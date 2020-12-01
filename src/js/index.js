@@ -2,6 +2,10 @@ import "../scss/main.scss";
 
 import swal from "sweetalert";
 
+import Chart from 'chart.js';
+
+import "../js/Chart.js";
+
 // uncomment the lines below to enable PWA
 import { registerSW } from "./pwa.js";
 registerSW();
@@ -10,7 +14,6 @@ registerSW();
 
 console.log("HELLO 🚀");
 
-const info = document.querySelector(".info--js");
 const statistics = document.querySelector(".statistics--js");
 const settings = document.querySelector(".settings--js");
 const home = document.querySelector(".home--js");
@@ -25,6 +28,12 @@ const settingsButton = document.querySelector(".goal__button--js");
 const selectGoal = document.querySelector(".dailygoal--js");
 const dailygoalasd = document.querySelector(".statusPanel--stan");
 const glassDiv = document.querySelector(".glass");
+const svgHome = document.querySelector(".homeSvg--js");
+const svgStatistics = document.querySelector(".statisticsSvg--js");
+const svgSettings = document.querySelector(".settingsSvg--js");
+const homeText = document.querySelector(".homeText--js");
+const statisticsText = document.querySelector(".statisticsText--js");
+const settingsText = document.querySelector(".settingsText--js");
 
 const stan = document.querySelector(".stan--js");
 
@@ -57,14 +66,10 @@ if(keyselect){
   for (var i=0; i<idGoal.options.length; i++) {
     option = idGoal.options[i];
   
-    if (option.value == localStorage.getItem("select")) {
-    // or
-    // if (option.text == 'Malaysia') {
+    if (option.value == localStorage.getItem("select")){
        option.setAttribute('selected', true);
-  
-       // For a single select, the job's done
-    } 
-  }
+    };
+  };
 };
 
 
@@ -125,43 +130,46 @@ dailygoalasd.innerHTML = stanL;
 // Menu button
 
 home.addEventListener("click", () => {
-  infoOpen.classList.remove("info--show");
   statisticsOpen.classList.remove("statistics--show");
   settingsOpen.classList.remove("settings--show");
   home.style.background = "#113a5a";
-  info.style.background = "#E6EFF2";
   settings.style.background = "#E6EFF2";
   statistics.style.background = "#E6EFF2";
-});
-
-info.addEventListener("click", () => {
-  infoOpen.classList.add("info--show");
-  statisticsOpen.classList.remove("statistics--show");
-  settingsOpen.classList.remove("settings--show");
-  info.style.background = "#113a5a";
-  settings.style.background = "#E6EFF2";
-  statistics.style.background = "#E6EFF2";
-  home.style.background = "#E6EFF2";
+  svgHome.style.fill='#E6EFF2';
+  svgSettings.style.fill='#113a5a';
+  svgStatistics.style.fill='#113a5a';
+  homeText.style.color='#E6EFF2';
+  statisticsText.style.color='#113a5a';
+  settingsText.style.color='#113a5a';
 });
 
 statistics.addEventListener("click", () => {
   statisticsOpen.classList.add("statistics--show");
   settingsOpen.classList.remove("settings--show");
-  infoOpen.classList.remove("info--show");
   statistics.style.background = "#113a5a";
-  info.style.background = "#E6EFF2";
   settings.style.background = "#E6EFF2";
   home.style.background = "#E6EFF2";
+  svgHome.style.fill='#113a5a';
+  svgSettings.style.fill='#113a5a';
+  svgStatistics.style.fill='#E6EFF2';
+  statisticsText.style.color='#E6EFF2';
+  homeText.style.color='#113a5a';
+  settingsText.style.color='#113a5a';
+
 });
 
 settings.addEventListener("click", () => {
   settingsOpen.classList.add("settings--show");
   statisticsOpen.classList.remove("statistics--show");
-  infoOpen.classList.remove("info--show");
   settings.style.background = "#113a5a";
   statistics.style.background = "#E6EFF2";
-  info.style.background = "#E6EFF2";
   home.style.background = "#E6EFF2";
+  svgHome.style.fill='#113a5a';
+  svgSettings.style.fill='#E6EFF2';
+  svgStatistics.style.fill='#113a5a';
+  settingsText.style.color='#E6EFF2';
+  statisticsText.style.color='#113a5a';
+  homeText.style.color='#113a5a';
 });
 
 //////////////////////////////////////////////// test //////////////////////////////////
@@ -273,7 +281,7 @@ const storageArrayEntries = Object.entries(localStorage).sort((a, b) =>
   b[0].localeCompare(a[0])
 );
 for (let [key, value] of storageArrayEntries) {
-  if (value !== "INFO" && key !== "select" && key !== "SVG") {
+  if (value !== "INFO" && key !== "select" && key !== "SVG" && key !== "inputValue") {
     let cupsAmount = JSON.parse(value).value;
     const calc = () => {
       percentage = (cupsAmount / myGoal) * 100;
@@ -359,6 +367,15 @@ if (obj) {
     })
   );
 }
+
+if (!obj){
+  svgElement1.style.opacity = '0';
+  svgElement2.style.opacity = '0';
+  svgElement3.style.opacity = '0';
+  svgElement4.style.opacity = '0';
+  svgElement5.style.opacity = '0';
+  svgElement6.style.opacity = '0';
+};
 
 const svgOpacityAdd = () => {
   if (percentage >= 16.5) {

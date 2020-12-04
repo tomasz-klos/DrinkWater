@@ -1,14 +1,15 @@
 .header {
-  background: #113a5a;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 15vh;
+  width: 100%;
+  z-index: 998;
+  background: #e6eff2;
   &__title {
-    color: #e6eff2;
-    margin: 0;
-    font-size: 40px;
+    margin: 16px 30px;
+    font-size: 25px;
     letter-spacing: 0.1em;
-    font-weight: 400;
+    font-weight: 500;
+    line-height: 30px;
   }
 }

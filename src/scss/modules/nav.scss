@@ -1,34 +1,44 @@
 .nav {
-  background: #E6EFF2;
+  background: #e6eff2;
   display: flex;
   width: 100%;
-  border-top: 1px solid #113a5a;
-  position: fixed;
-  bottom: 0;
+  border-bottom: 1px solid #c1c8cd;
   z-index: 999;
+  padding: 12px 10px;
   &__button {
     background: none;
     border: none;
-    height: 80px;
     width: 100%;
     outline: none;
+    display: flex;
   }
   &__div {
-    height: 80px;
     width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-  &__homeDiv {
-    background: #113a5a;
   }
   &__text {
     margin: 0;
     color: #113a5a;
+    display: inline;
+    font-weight: 300;
+    padding-left: 5px;
   }
   &__homeText {
     margin: 0;
-    color: #E6EFF2;
+    display: inline;
+    font-weight: 300;
+    padding-left: 5px;
   }
+  &__statistics {
+  }
+  &__settings {
+  }
+}
+
+
+.statisticsSvg--js {
+  opacity: 0.4;
+}
+
+.settingsSvg--js {
+  opacity: 0.4;
 }

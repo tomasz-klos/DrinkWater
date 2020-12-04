@@ -132,44 +132,36 @@ dailygoalasd.innerHTML = stanL;
 home.addEventListener("click", () => {
   statisticsOpen.classList.remove("statistics--show");
   settingsOpen.classList.remove("settings--show");
-  home.style.background = "#113a5a";
-  settings.style.background = "#E6EFF2";
-  statistics.style.background = "#E6EFF2";
-  svgHome.style.fill='#E6EFF2';
-  svgSettings.style.fill='#113a5a';
-  svgStatistics.style.fill='#113a5a';
-  homeText.style.color='#E6EFF2';
-  statisticsText.style.color='#113a5a';
-  settingsText.style.color='#113a5a';
+  homeText.style.opacity='1';
+  statisticsText.style.opacity='0.4';
+  settingsText.style.opacity='0.4';
+  svgStatistics.style.opacity='0.4';
+  svgSettings.style.opacity='0.4';
+  statisticsText.style.opacity='0.4';
+  svgHome.style.opacity='1';
 });
 
 statistics.addEventListener("click", () => {
   statisticsOpen.classList.add("statistics--show");
   settingsOpen.classList.remove("settings--show");
-  statistics.style.background = "#113a5a";
-  settings.style.background = "#E6EFF2";
-  home.style.background = "#E6EFF2";
-  svgHome.style.fill='#113a5a';
-  svgSettings.style.fill='#113a5a';
-  svgStatistics.style.fill='#E6EFF2';
-  statisticsText.style.color='#E6EFF2';
-  homeText.style.color='#113a5a';
-  settingsText.style.color='#113a5a';
+  statisticsText.style.opacity='1';
+  homeText.style.opacity='0.4';
+  settingsText.style.opacity='0.4';
+  svgHome.style.opacity='0.4';
+  svgSettings.style.opacity='0.4';
+  svgStatistics.style.opacity='1';
 
 });
 
 settings.addEventListener("click", () => {
   settingsOpen.classList.add("settings--show");
   statisticsOpen.classList.remove("statistics--show");
-  settings.style.background = "#113a5a";
-  statistics.style.background = "#E6EFF2";
-  home.style.background = "#E6EFF2";
-  svgHome.style.fill='#113a5a';
-  svgSettings.style.fill='#E6EFF2';
-  svgStatistics.style.fill='#113a5a';
-  settingsText.style.color='#E6EFF2';
-  statisticsText.style.color='#113a5a';
-  homeText.style.color='#113a5a';
+  settingsText.style.opacity='1';
+  statisticsText.style.opacity='0.4';
+  homeText.style.opacity='0.4';
+  svgHome.style.opacity='0.4';
+  svgStatistics.style.opacity='0.4';
+  svgSettings.style.opacity='1';
 });
 
 //////////////////////////////////////////////// test //////////////////////////////////

@@ -20,7 +20,6 @@ const home = document.querySelector(".home--js");
 const glassCounter = document.querySelector(".glass__counter--js");
 const buttonAdd = document.querySelector(".button--js");
 const buttonRemove = document.querySelector(".button-remove--js");
-const infoOpen = document.querySelector(".info");
 const statisticsOpen = document.querySelector(".statistics");
 const settingsOpen = document.querySelector(".settings");
 const sectionStatistics = document.querySelector(".content--js");
@@ -34,6 +33,9 @@ const svgSettings = document.querySelector(".settingsSvg--js");
 const homeText = document.querySelector(".homeText--js");
 const statisticsText = document.querySelector(".statisticsText--js");
 const settingsText = document.querySelector(".settingsText--js");
+const settingsButtonGoal = document.querySelector(".settingsButton--goal");
+const windowGoal = document.querySelector(".windowGoal--js");
+const backgroundWindowGoal = document.querySelector(".backgroundWindowGoal--js");
 
 const stan = document.querySelector(".stan--js");
 
@@ -54,8 +56,10 @@ const resultgoal = idGoal.options[idGoal.selectedIndex].value;
 const keyselect = localStorage.getItem("select", dailygoal);
 const idSelected = idGoal.selectedIndex;
 
+
+
 ///////////////////////////////////////////
-// Goal settings
+////////////////////////////////////////////////////////// Goal settings ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 if (!keyselect) {
   localStorage.setItem("select", 8);
 };
@@ -83,12 +87,6 @@ function addValue() {
 function save() {
   localStorage.getItem("select", myGoal);
 };
-
-// if(localStorage.getItem("inputValue")){
-//   $('.isChecked').prop('checked', true);
-// } else {
-//   $('.isChecked').prop('checked', false);
-// };
 
 const isChecked = document.querySelector(".inputhand");
 const right = document.querySelector(".settings__right");
@@ -120,14 +118,14 @@ if(localStorage.getItem("inputValue") == 1){
 };
 
 
-/////// Aktualny dzienny cel /
+////////////////////////////////////////////////// Current daily goal ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let stanL = myGoal * 0.25;
 console.log(stanL);
 
 dailygoalasd.innerHTML = stanL;
 
-// Menu button
+////////////////////////////////////////////////// Menu button ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 home.addEventListener("click", () => {
   statisticsOpen.classList.remove("statistics--show");
@@ -451,6 +449,15 @@ const svgOpacityRemove = () => {
   );
 };
 
+////////////////////////////////////////////////////// Settings Button //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+settingsButtonGoal.addEventListener("click", () => {
+  windowGoal.classList.add("absolute__windowGoal--open");
+  backgroundWindowGoal.classList.add("absolute__backgroundWindowGoal--open");
+});
+
+
+
 ///////////// TEST //////////////////////////
 
 const animateCSS = (buttonAdd, animation, prefix = 'animate__') =>
@@ -469,4 +476,3 @@ const animateCSS = (buttonAdd, animation, prefix = 'animate__') =>
 
     node.addEventListener('animationend', handleAnimationEnd, {once: true});
   });
-

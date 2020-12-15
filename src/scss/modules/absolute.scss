@@ -1,0 +1,58 @@
+.absolute {
+  &__backgroundWindowGoal {
+    display: none;
+  }
+  &__backgroundWindowGoal--open {
+    display: inline;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 998;
+    top: 0;
+  }
+  &__windowGoal {
+    display: none;
+  }
+  &__windowGoal--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30vh;
+    left: 5vh;
+    background: #ffffff;
+    width: 80vw;
+    height: 25vh;
+    border-radius: 10px;
+    z-index: 999;
+  }
+  &__label {
+      padding: 6% 6% 6% 10%;
+  }
+  &__buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10%;
+  }
+  &__cancel {
+      border: none;
+      background-color: #ffffff;
+      outline: none;
+  }
+  &__ok {
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+    color: #03f303;
+  }
+}
+
+
+
+.dailygoal {
+    background-color: #E6EFF2;
+    border: none;
+    color: #113A5A;
+    font-weight: 500;
+    margin: 10% 20%;
+  }

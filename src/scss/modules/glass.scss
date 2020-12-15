@@ -17,6 +17,7 @@
     border-radius: 50px;
     border: none;
     background: #113a5a;
+    z-index: 996;
 
   }
   &__buttonChange {
@@ -25,6 +26,8 @@
     position: absolute;
     left: 27.5vw;
     top: 48.5vh;
+    z-index: 996;
+    display: none;
   }
   &__text {
     color: #E6EFF2;
@@ -41,5 +44,4 @@
 .circleSvg {
   position: absolute;
   z-index: 995;
-  top: 19vh;
 }

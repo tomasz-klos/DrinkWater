@@ -9,6 +9,7 @@
 @import "modules/settings.scss";
 @import "modules/statusPanel.scss";
 @import "modules/switch.scss";
+@import "modules/absolute.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
@@ -22,7 +23,7 @@ body {
 
 main {
   height: 80vh;
-  margin-top: 15vh;
+  margin-top: 20vh;
 }
 
 

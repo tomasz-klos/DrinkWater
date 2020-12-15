@@ -2,7 +2,7 @@
   "name": "DrinkWater",
   "short_name": "DrinkWater",
   "theme_color": "#2D2241",
-  "background_color": "#2D2241",
+  "background_color": "#113a5a",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/DrinkWater/",

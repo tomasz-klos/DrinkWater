@@ -1,7 +1,7 @@
 {
   "name": "DrinkWater",
   "short_name": "DrinkWater",
-  "theme_color": "#2D2241",
+  "theme_color": "#E6EFF2",
   "background_color": "#113a5a",
   "display": "standalone",
   "orientation": "portrait",

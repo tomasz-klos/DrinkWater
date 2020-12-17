@@ -78,7 +78,16 @@
     width: 100%;
     height: 100%;
     border: none;
+    outline: none;
     background: #E6EFF2;
+    position: relative;
+  }
+  &__option:active {
+    background:rgba(0, 0, 0, 0.25);
+    // transition: all 100ms ease-in-out;
+    transition-property: right;
+  transition-duration: 1s, 1s;
+  transition-delay: 0s, 1s;
   }
   &__value {
     width: 20%;

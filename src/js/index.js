@@ -34,8 +34,11 @@ const homeText = document.querySelector(".homeText--js");
 const statisticsText = document.querySelector(".statisticsText--js");
 const settingsText = document.querySelector(".settingsText--js");
 const settingsButtonGoal = document.querySelector(".settingsButton--goal");
+const settingsButtonGlass = document.querySelector(".settingsButton--glass");
 const windowGoal = document.querySelector(".windowGoal--js");
+const windowGlass = document.querySelector(".windowGlass--js");
 const backgroundWindowGoal = document.querySelector(".backgroundWindowGoal--js");
+const CancelButton = document.querySelector(".cancel--js");
 
 const stan = document.querySelector(".stan--js");
 
@@ -51,7 +54,7 @@ let currentstatus;
 let currentGlassCounter = 0;
 
 const idGoal = document.getElementById("dailygoal");
-const resultgoal = idGoal.options[idGoal.selectedIndex].value;
+// const resultgoal = idGoal.options[idGoal.selectedIndex].value;
 
 const keyselect = localStorage.getItem("select", dailygoal);
 const idSelected = idGoal.selectedIndex;
@@ -67,7 +70,7 @@ if (!keyselect) {
 let option;
 
 if(keyselect){
-  for (var i=0; i<idGoal.options.length; i++) {
+  for (let i=0; i<idGoal.length; i++) {
     option = idGoal.options[i];
   
     if (option.value == localStorage.getItem("select")){
@@ -80,10 +83,6 @@ if(keyselect){
 
 let myGoal = localStorage.getItem("select");
 
-function addValue() {
-  localStorage.setItem("select", myGoal);
-}
-
 function save() {
   localStorage.getItem("select", myGoal);
 };
@@ -95,6 +94,7 @@ settingsButton.addEventListener("click", () => {
   let dailygoal = selectGoal.value;
   console.log(dailygoal);
   localStorage.setItem("select", dailygoal);
+  dailygoalasd.innerHTML = dailygoal;
 
   if (isChecked.checked) {
     localStorage.setItem("inputValue", 1);
@@ -102,11 +102,10 @@ settingsButton.addEventListener("click", () => {
     glassDiv.classList.add("glass__hand");
     localStorage.setItem("inputValue", 0);
   }
-  home.style.background = "#113a5a";
   glassDiv.classList.add("glass__hand");
   save();
-  console.log(myGoal);
-  location.reload();
+  windowGoal.classList.remove("absolute__windowGoal--open");
+  backgroundWindowGoal.classList.remove("absolute__backgroundWindowGoal--open");
   return false;
 });
 
@@ -120,8 +119,12 @@ if(localStorage.getItem("inputValue") == 1){
 
 ////////////////////////////////////////////////// Current daily goal ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-let stanL = myGoal * 0.25;
-console.log(stanL);
+// const CurrentDailyGoal = () => {
+//   let stanL = myGoal * 0.25;
+//   dailygoalasd.innerHTML = stanL;
+// };
+
+let stanL = myGoal;
 
 dailygoalasd.innerHTML = stanL;
 
@@ -451,11 +454,24 @@ const svgOpacityRemove = () => {
 
 ////////////////////////////////////////////////////// Settings Button //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// WindowSettings--open
+
 settingsButtonGoal.addEventListener("click", () => {
   windowGoal.classList.add("absolute__windowGoal--open");
   backgroundWindowGoal.classList.add("absolute__backgroundWindowGoal--open");
 });
 
+settingsButtonGlass.addEventListener("click", () => {
+  windowGlass.classList.add("absolute2__windowGlass--open");
+  backgroundWindowGoal.classList.add("absolute__backgroundWindowGoal--open");
+});
+
+// Button Cancel
+
+CancelButton.addEventListener("click", () => {
+  windowGoal.classList.remove("absolute__windowGoal--open");
+  backgroundWindowGoal.classList.remove("absolute__backgroundWindowGoal--open");
+});
 
 
 ///////////// TEST //////////////////////////

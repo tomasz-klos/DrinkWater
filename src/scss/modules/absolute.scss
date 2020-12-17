@@ -18,41 +18,79 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30vh;
-    left: 5vh;
+    top: 35vh;
+    left: 10vw;
     background: #ffffff;
-    width: 80vw;
-    height: 25vh;
+    width: 300px;
+    height: 220px;
     border-radius: 10px;
     z-index: 999;
   }
   &__label {
-      padding: 6% 6% 6% 10%;
+    padding: 6% 6% 8% 6%;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
   }
   &__buttons {
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 10%;
+    margin-right: 4%;
+    align-self: flex-end;
   }
   &__cancel {
-      border: none;
-      background-color: #ffffff;
-      outline: none;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
   }
   &__ok {
     border: none;
     background-color: #ffffff;
     outline: none;
-    color: #03f303;
+    color: #0075ff;
+  }
+  &__inputRange {
+    width: 70vw;
+    align-self: center;
+    margin: 17% 0;
   }
 }
 
-
+.absolute2 {
+  &__windowGlass {
+    display: none;
+  }
+  &__windowGlass--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 35vh;
+    left: 10vw;
+    background: #ffffff;
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
+    z-index: 999;
+  }
+  &__buttons {
+    margin-right: 4%;
+    align-self: flex-end;
+  }
+  &__cancel {
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+  }
+  &__ok {
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+    color: #0075ff;
+  }
+}
 
 .dailygoal {
-    background-color: #E6EFF2;
-    border: none;
-    color: #113A5A;
-    font-weight: 500;
-    margin: 10% 20%;
-  }
+  background-color: #e6eff2;
+  border: none;
+  color: #113a5a;
+  font-weight: 500;
+  margin: 10% 20%;
+}

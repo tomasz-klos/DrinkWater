@@ -17,67 +17,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <link rel="apple-touch-icon" href="pwa/apple-icon-180.png">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -131,11 +70,6 @@
             <p class="nav__text statisticsText--js">Statystyka</p>
           </button>
         </div>
-        <!-- <div class="nav__div">
-      <button class="nav__button info--js">
-        <img id="toggle" class="nav__info" src="../assets/img/Info.svg">
-      </button>
-    </div> -->
         <div class="nav__div">
           <button class="nav__button settings--js">
             <svg class="nav__settings" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,8 +84,8 @@
     <div class="absolute__backgroundWindowGoal backgroundWindowGoal--js">
     </div>
     <div class="absolute__windowGoal windowGoal--js">
-      <label class="absolute__label" for="goal">Wybierz dzienny cel</label>
-      <select id="dailygoal" class="dailygoal dailygoal--js">
+      <p class="absolute__label" for="goal">Wybierz dzienny cel</p>
+      <!-- <select id="dailygoal" class="dailygoal dailygoal--js">
         <option value="8">2 l</option>
         <option value="9">2.25 l</option>
         <option value="10">2.5 l</option>
@@ -165,11 +99,29 @@
         <option value="18">4.5 l</option>
         <option value="19">4.75 l</option>
         <option value="20">5 l</option>
-      </select>
+      </select> -->
+      <label></label>
+      <input class="absolute__inputRange dailygoal--js" id="dailygoal" name="weight"  list="goalOption" type="range" min="0" max="5000" value="3000">
+      <datalist id="goalOption">
+        <option value="3000"></option>
+      </datalist>
       <div class="absolute__buttons">
-      <button class="absolute__cancel">ANULUJ</button>
-      <button class="absolute__ok">OK</button>
+      <button class="absolute__cancel cancel--js">ANULUJ</button>
+      <button class="absolute__ok goal__button--js">OK</button>
     </div>
+      </div>
+    </div>
+    <div class="absolute2">
+      <div class="absolute__backgroundWindowGoal backgroundWindowGoal--js">
+      </div>
+      <div class="absolute2__windowGlass windowGlass--js">
+        <p>Wybierz pojemność szklanki</p>
+        
+        <div class="absolute__buttons">
+          <button class="absolute__cancel cancel--js">ANULUJ</button>
+          <button class="absolute__ok goal__button--js">OK</button>
+        </div>
+
       </div>
     </div>
     <main class="app">
@@ -183,11 +135,11 @@
         <div class="settingsform">
             <button class="settingsform__option settingsButton--goal">
               <span class="settingsform__goal">Dzienny cel</span>
-              <span class="settingsform__value">4 L</span>
+              <span class="settingsform__value"><span class="statusPanel--stan"></span> ml</span>
             </button>
         </div>
         <div class="settingsform">
-          <button class="settingsform__option">
+          <button class="settingsform__option settingsButton--glass">
             <span class="settingsform__goal">Szklanka</span>
             <span class="settingsform__value">500 ml</span>
             </button>
@@ -217,7 +169,6 @@
             <span class="settings__right">P</span>
           </div>
         </div>
-        <button class="settingsform__button goal__button--js">Zapisz</button>
       </div>
       <div class="glass">
         <svg class="svg" width="244" height="218" viewBox="0 0 244 218" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -328,7 +279,7 @@
           <p class="statusPanel__title">Stan</p>
           <p class="statusPanel__bold"><span class="stan--js"></span>L</p>
         </article>
-        <article class="statusPanel__dailygoal">
+        <article class="">
           <img src="../assets/img/Goal.png">
           <p class="statusPanel__title">Dzienny cel</p>
           <p class="statusPanel__bold">
